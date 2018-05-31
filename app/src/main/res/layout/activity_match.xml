@@ -55,7 +55,6 @@
                     android:layout_width="25sp"
                     android:layout_height="25sp"
                     android:layout_weight="1"
-                    android:padding="20sp"
                     android:background="@drawable/soccer_30px"/>
                 <TextView
                     android:id="@+id/recentMatchsId"
@@ -64,8 +63,8 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:textColor="#fff"
-                    android:text="Matches"
-                    android:padding="10sp"/>
+                    android:layout_marginLeft="10sp"
+                    android:text="Matches" />
             </LinearLayout>
 
 
@@ -85,7 +84,6 @@
                     android:layout_width="25sp"
                     android:layout_height="25sp"
                     android:background="@drawable/group_32px"
-                    android:padding="10sp"
                     android:layout_weight="1"/>
                 <TextView
                     android:id="@+id/groupsId"
@@ -94,8 +92,8 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:textColor="#fff"
-                    android:text="Groups"
-                    android:padding="10sp"/>
+                    android:layout_marginLeft="10sp"
+                    android:text="Groups" />
             </LinearLayout>
 
             <View
@@ -113,7 +111,6 @@
                     android:layout_width="25sp"
                     android:layout_height="25sp"
                     android:layout_weight="1"
-                    android:padding="10sp"
                     android:background="@drawable/schedule_32px"/>
                 <TextView
                     android:id="@+id/scheduleId"
@@ -123,7 +120,7 @@
                     android:layout_weight="1"
                     android:textColor="#fff"
                     android:text="Schedule"
-                    android:padding="10sp"/>
+                    android:layout_marginLeft="10sp"/>
             </LinearLayout>
 
             <View
@@ -141,16 +138,15 @@
                     android:layout_width="25sp"
                     android:layout_height="25sp"
                     android:layout_weight="1"
-                    android:background="@drawable/news_30px"
-                    android:padding="10sp"/>
+                    android:background="@drawable/news_30px" />
                 <TextView
                     android:id="@+id/newseId"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:padding="10sp"
                     android:textColor="#fff"
+                    android:layout_marginLeft="10sp"
                     android:text="Newse"/>
             </LinearLayout>
 

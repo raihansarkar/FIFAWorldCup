@@ -70,14 +70,6 @@
                         android:textColor="#0f3f79"
                         android:textSize="10sp" />
 
-                    <ImageView
-                        android:id="@+id/flagTwoId"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        app:srcCompat="@android:drawable/btn_star_big_on" />
-
                     <TextView
                         android:id="@+id/teamTwoId"
                         android:layout_width="match_parent"
@@ -87,6 +79,14 @@
                         android:text="Team 2"
                         android:textColor="#0f3f79"
                         android:textSize="10sp" />
+
+                    <ImageView
+                        android:id="@+id/flagTwoId"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        app:srcCompat="@android:drawable/btn_star_big_on" />
 
 
                     <TextView
