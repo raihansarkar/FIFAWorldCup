@@ -146,7 +146,7 @@ public class GroupFragment extends Fragment {
 //    }
 
     public void refreshDataView(){
-        //arrayList.removeAll(arrayList);
+        arrayList.removeAll(arrayList);
 
         db.collection("groups")
                 .get()
