@@ -147,7 +147,7 @@
                     android:layout_weight="1"
                     android:textColor="#fff"
                     android:layout_marginLeft="10sp"
-                    android:text="Newse"/>
+                    android:text="News"/>
             </LinearLayout>
 
 
