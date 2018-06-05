@@ -39,6 +39,7 @@
                 android:layout_gravity="center"
                 android:src="@drawable/profile"/>
 
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -49,6 +50,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:orientation="horizontal"
                 android:paddingLeft="30sp">
                 <ImageView
@@ -140,7 +142,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/news_30px" />
                 <TextView
-                    android:id="@+id/newseId"
+                    android:id="@+id/newsId"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

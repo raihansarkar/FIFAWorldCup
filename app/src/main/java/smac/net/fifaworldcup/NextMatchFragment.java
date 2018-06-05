@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -38,6 +39,7 @@ public class NextMatchFragment extends Fragment {
 
     View view;
     FirebaseFirestore db;
+    private Button btnBackMatch;
     private List<Item> arrayList;
     private ListView matchListview;
     private BaseAdapter adapter;
@@ -108,6 +110,18 @@ public class NextMatchFragment extends Fragment {
 
         adapter.notifyDataSetChanged();
 
+        //        back button ======================================
+        btnBackMatch=view.findViewById(R.id.backMatchBtnId);
+        btnBackMatch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MatchFragment matchFragment = new MatchFragment();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.changeLayout, matchFragment);
+                fragmentTransaction.commit();
+            }
+        });
 
         return view;
 

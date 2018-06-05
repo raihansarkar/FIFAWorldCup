@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/fifa2018">
+        android:background="@drawable/fifa_bg">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,10 +51,18 @@
         <ListView
             android:id="@+id/matchListviewId"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="400sp" >
 
         </ListView>
 
+        <Button
+            android:id="@+id/backMatchBtnId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#fafafa"
+            android:gravity="center"
+            android:text="Back" />
 
     </LinearLayout>
 
