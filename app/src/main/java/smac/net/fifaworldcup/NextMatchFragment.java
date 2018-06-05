@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -35,17 +34,16 @@ import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MatchFragment extends Fragment {
+public class NextMatchFragment extends Fragment {
 
     View view;
     FirebaseFirestore db;
-    private Button btnNextMatch;
     private List<Item> arrayList;
     private ListView matchListview;
     private BaseAdapter adapter;
     String TAG="firebaseChack";
 
-    public MatchFragment() {
+    public NextMatchFragment() {
         // Required empty public constructor
     }
 
@@ -54,7 +52,7 @@ public class MatchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view= inflater.inflate(R.layout.fragment_match, container, false);
+        view= inflater.inflate(R.layout.fragment_next_match, container, false);
 
         matchListview=(ListView) view.findViewById(R.id.matchListviewId);
 
@@ -92,13 +90,13 @@ public class MatchFragment extends Fragment {
                 ImageView flagOne=(ImageView) convertView.findViewById(R.id.flagOneId);
                 ImageView flagTwo=(ImageView) convertView.findViewById(R.id.flagTwoId);
 
-                    teamOne.setText(arrayList.get(position).getTeam1());
-                    teamTwo.setText(arrayList.get(position).getTeam2());
-                    date.setText(arrayList.get(position).getDate());
-                    time.setText(arrayList.get(position).getTime());
-                    Glide.with(getActivity().getBaseContext()).load(arrayList.get(position).getFlag1()).centerCrop().fitCenter().error(R.color.colorAccent).into(flagOne);
-                    Glide.with(getActivity().getBaseContext()).load(arrayList.get(position).getFlag2()).centerCrop().fitCenter().error(R.color.colorAccent).into(flagTwo);
-                    //here write about flags
+                teamOne.setText(arrayList.get(position).getTeam1());
+                teamTwo.setText(arrayList.get(position).getTeam2());
+                date.setText(arrayList.get(position).getDate());
+                time.setText(arrayList.get(position).getTime());
+                Glide.with(getActivity().getBaseContext()).load(arrayList.get(position).getFlag1()).centerCrop().fitCenter().error(R.color.colorAccent).into(flagOne);
+                Glide.with(getActivity().getBaseContext()).load(arrayList.get(position).getFlag2()).centerCrop().fitCenter().error(R.color.colorAccent).into(flagTwo);
+                //here write about flags
 
 
                 return convertView;
@@ -109,19 +107,6 @@ public class MatchFragment extends Fragment {
         refreshDataView();
 
         adapter.notifyDataSetChanged();
-
-//        next button ======================================
-        btnNextMatch=view.findViewById(R.id.nextMatchBtnId);
-        btnNextMatch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NextMatchFragment nextMatchFragment = new NextMatchFragment();
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.changeLayout, nextMatchFragment);
-                fragmentTransaction.commit();
-            }
-        });
 
 
         return view;
@@ -151,18 +136,36 @@ public class MatchFragment extends Fragment {
 
 
                                 Item item = new Item(flag1,flag2,team1,team2,date,time);
-
-                                if (item.getDate().equals(getDateTime())){
+//                                    arrayList.add(item);
+                                String array1[]= date.split("/");
+                                Integer[] integerArr1=new Integer[array1.length];
+                                int i=0;
+                                for (String temp: array1){
+                                    integerArr1[i]=Integer.parseInt(temp);
+                                    i++;
+                                }
+                                String str2 = new String(getDateTime());
+                                String array2[]= str2.split("/");
+                                Integer[] integerArr2=new Integer[array2.length];
+                                i=0;
+                                for (String temp: array2){
+                                    integerArr2[i]=Integer.parseInt(temp);
+                                    i++;
+                                }
+                                if (integerArr2[0]<=integerArr1[0]) {
+                                    integerArr2[0]=integerArr1[0];
+                                }
+                                if (integerArr2[1]<integerArr1[1]) {
+                                    integerArr2[1]=integerArr1[1];
+                                }else{
+                                    integerArr1[1]=integerArr1[1]-1;
+                                }
+                                if(integerArr2[0]==integerArr1[0] && integerArr2[1]==integerArr1[1]){
                                     arrayList.add(item);
                                 }
-                            }
-
-                            if (arrayList.size()<=0){
-                                BlankFragment blankFragment = new BlankFragment();
-                                FragmentManager fragmentManager = getFragmentManager();
-                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                                fragmentTransaction.replace(R.id.changeLayout, blankFragment);
-                                fragmentTransaction.commit();
+                                if (arrayList.size()>=3){
+                                    break;
+                                }
                             }
 
                             adapter.notifyDataSetChanged();
@@ -173,11 +176,11 @@ public class MatchFragment extends Fragment {
                     }
                 });
     }
-
     private String getDateTime() {
         DateFormat dateFormat = new SimpleDateFormat("MM/dd");
         Date date = new Date();
         return dateFormat.format(date);
     }
+
 
 }

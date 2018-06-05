@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/side_nav_bar"
+    android:orientation="vertical"
+    tools:context=".BlankFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100sp"
+        android:background="@drawable/side_nav_bar">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/holo_red_light"
+            android:gravity="center"
+            android:text="No Match Held On Today \n\n To See The Next Match Click Next Button"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/btnNextMatchId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#648895"
+        android:gravity="center"
+        android:text="Next Match" />
+
+</LinearLayout>

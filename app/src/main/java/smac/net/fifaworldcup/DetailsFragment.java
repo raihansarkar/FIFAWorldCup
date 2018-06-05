@@ -4,6 +4,8 @@ package smac.net.fifaworldcup;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +35,7 @@ public class DetailsFragment extends Fragment {
 
     View view;
     FirebaseFirestore db;
+    private TextView detailsGroup;
     private List<Item> arrayList;
     private ListView detailsListview;
     private BaseAdapter adapter;
@@ -128,6 +131,20 @@ public class DetailsFragment extends Fragment {
         refreshDataView();
 
         adapter.notifyDataSetChanged();
+
+        //groupDetails------------------------
+        detailsGroup=view.findViewById(R.id.groupViewDetailsId);
+        detailsGroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GroupFragment groupFragment = new GroupFragment();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.changeLayout, groupFragment);
+                fragmentTransaction.commit();
+
+            }
+        });
 
         return view;
     }
