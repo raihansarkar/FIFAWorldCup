@@ -4,13 +4,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AboutFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#86b853">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_marginTop="20sp"/>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
+        android:text="FIFA Schedule 2018\n
+
+This is the initiative of SMAC Technology and from this app, you can see FIFA World Cup 2018 schedule. You will get a periodic reminder of each and every game. You can participate in the quiz, can predict the winner of the game and share it with your friends and family through the social platform.
+
+SMAC team wishes to have an enjoyable moment of the tournament and best usages of it."
+        android:padding="20sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contributors"
+        android:gravity="center"
+        android:textSize="20sp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shaikh Faisal Hossain\n Raihan Uddin \n Tushar Saha"
+        android:padding="20sp"
+        android:gravity="center"
+        android:layout_marginBottom="100sp"/>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="\u00a9 SMAC Technology 2018"
+        android:padding="20sp"
+        android:gravity="center"/>
 
 
 </LinearLayout>
