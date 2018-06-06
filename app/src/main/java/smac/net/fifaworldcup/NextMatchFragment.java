@@ -109,7 +109,6 @@ public class NextMatchFragment extends Fragment {
         refreshDataView();
 
         adapter.notifyDataSetChanged();
-
         btnBackMatch=view.findViewById(R.id.backMatchBtnId);
         btnBackMatch.setOnClickListener(new View.OnClickListener() {
             @Override

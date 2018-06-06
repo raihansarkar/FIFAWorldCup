@@ -15,13 +15,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MatchActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private static final int TIME_DELAY = 2000;
+    private static long back_pressed;
     TextView recentMatchs;
     TextView groups;
     TextView schedule;
+    TextView news;
     FragmentManager fragmentManager;
     NavigationView navigationView;
 
@@ -41,7 +45,7 @@ public class MatchActivity extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -53,6 +57,7 @@ public class MatchActivity extends AppCompatActivity
         recentMatchs=findViewById(R.id.recentMatchsId);
         groups=findViewById(R.id.groupsId);
         schedule=findViewById(R.id.scheduleId);
+        news =findViewById(R.id.newsId);
 
         fragmentManager=getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.changeLayout,new MatchFragment()).commit();
@@ -64,6 +69,9 @@ public class MatchActivity extends AppCompatActivity
                 fragmentManager=getSupportFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.changeLayout,new MatchFragment()).commit();
                 navigationView.setCheckedItem(R.id.recentMatchsId);
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
+
             }
         });
 
@@ -73,6 +81,8 @@ public class MatchActivity extends AppCompatActivity
                 fragmentManager=getSupportFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.changeLayout,new GroupFragment()).commit();
                 navigationView.setCheckedItem(R.id.groupsId);
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
             }
         });
 
@@ -82,6 +92,19 @@ public class MatchActivity extends AppCompatActivity
                 fragmentManager=getSupportFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.changeLayout,new ScheduleFragment()).commit();
                 navigationView.setCheckedItem(R.id.scheduleId);
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
+
+        news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fragmentManager=getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.changeLayout,new NewsFragment()).commit();
+                navigationView.setCheckedItem(R.id.newsId);
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
             }
         });
 
@@ -93,7 +116,14 @@ public class MatchActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+
+            if (back_pressed + TIME_DELAY > System.currentTimeMillis()) {
+                super.onBackPressed();
+            } else {
+                Toast.makeText(getBaseContext(), "Press once again to exit!",
+                        Toast.LENGTH_SHORT).show();
+            }
+            back_pressed = System.currentTimeMillis();
         }
     }
 

@@ -8,7 +8,9 @@
     tools:context=".MatchActivity"
     android:id="@+id/changeLayout"
     tools:showIn="@layout/app_bar_match"
-    android:background="@drawable/fifa2018">
+    android:background="@drawable/fifa_bg">
+
+
 
 
 
