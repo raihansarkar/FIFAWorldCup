@@ -13,14 +13,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
 
-        android:background="@drawable/fifa_bg">
+        android:background="@drawable/fifa2018">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="#008a2d">
+            android:background="#f70303">
 
             <TextView
                 android:id="@+id/textView5"
@@ -53,22 +53,19 @@
         <ListView
             android:id="@+id/matchListviewId"
             android:layout_width="match_parent"
-            android:layout_height="425sp" >
+            android:layout_height="400sp" >
 
         </ListView>
 
         <Button
             android:id="@+id/backMatchBtnId"
-            android:layout_width="125sp"
-            android:layout_height="40sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/prev"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:textColor="#ffffff"
-            android:paddingLeft="25sp"
-            android:text="Privious"/>
 
+            android:background="#648895"
+            android:gravity="center"
+            android:text="Next Match" />
 
 
     </LinearLayout>

@@ -19,7 +19,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#02024d"
+                android:background="#0d6cb5"
                 android:orientation="vertical">
 
                 <TextView
@@ -38,7 +38,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:background="#ffffff"
+                android:background="#042263"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -64,6 +64,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="Team 1"
+                        android:textColor="#fff"
                         android:textSize="20sp" />
                 </LinearLayout>
 
@@ -88,6 +89,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="Team 2"
+                        android:textColor="#fff"
                         android:textSize="20sp" />
                 </LinearLayout>
 
@@ -114,6 +116,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="Team 1"
+                        android:textColor="#fff"
                         android:textSize="20sp" />
                 </LinearLayout>
 
@@ -138,6 +141,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="Team 2"
+                        android:textColor="#fff"
                         android:textSize="20sp" />
                 </LinearLayout>
             </LinearLayout>

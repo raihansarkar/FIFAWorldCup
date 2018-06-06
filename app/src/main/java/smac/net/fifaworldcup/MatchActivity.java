@@ -25,7 +25,7 @@ public class MatchActivity extends AppCompatActivity
     TextView recentMatchs;
     TextView groups;
     TextView schedule;
-    TextView about;
+    TextView news;
     FragmentManager fragmentManager;
     NavigationView navigationView;
 
@@ -57,17 +57,17 @@ public class MatchActivity extends AppCompatActivity
         recentMatchs=findViewById(R.id.recentMatchsId);
         groups=findViewById(R.id.groupsId);
         schedule=findViewById(R.id.scheduleId);
-        about =findViewById(R.id.aboutId);
+        news =findViewById(R.id.newsId);
 
         fragmentManager=getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.changeLayout,new BlankFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.changeLayout,new MatchFragment()).commit();
         navigationView.setCheckedItem(R.id.recentMatchsId);
 
         recentMatchs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fragmentManager=getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.changeLayout,new BlankFragment()).commit();
+                fragmentManager.beginTransaction().replace(R.id.changeLayout,new MatchFragment()).commit();
                 navigationView.setCheckedItem(R.id.recentMatchsId);
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
@@ -97,12 +97,12 @@ public class MatchActivity extends AppCompatActivity
             }
         });
 
-        about.setOnClickListener(new View.OnClickListener() {
+        news.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fragmentManager=getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.changeLayout,new AboutFragment()).commit();
-                navigationView.setCheckedItem(R.id.aboutId);
+                fragmentManager.beginTransaction().replace(R.id.changeLayout,new NewsFragment()).commit();
+                navigationView.setCheckedItem(R.id.newsId);
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
             }

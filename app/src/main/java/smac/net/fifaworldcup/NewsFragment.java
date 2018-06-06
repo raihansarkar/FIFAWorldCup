@@ -6,19 +6,16 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AboutFragment extends Fragment {
+public class NewsFragment extends Fragment {
 
     View view;
 
-    public AboutFragment() {
+    public NewsFragment() {
         // Required empty public constructor
     }
 
@@ -27,8 +24,7 @@ public class AboutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view=inflater.inflate(R.layout.fragment_about, container, false);
-
+        view=inflater.inflate(R.layout.fragment_news, container, false);
         return view;
     }
 

@@ -3,201 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fifa_bg"
+    android:background="@drawable/side_nav_bar"
     android:orientation="vertical"
     tools:context=".BlankFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
-        <LinearLayout
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100sp"
+        android:background="@drawable/side_nav_bar">
+
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="425sp"
-            android:orientation="vertical"
-            android:layout_marginRight="10sp"
-            android:layout_marginLeft="10sp"
-            android:layout_marginTop="20sp"
+            android:layout_height="match_parent"
+            android:background="@android:color/holo_red_light"
             android:gravity="center"
-            android:background="@drawable/blank_screen">
+            android:text="No Match Held On Today \n\n To See The Next Match Click Next Button"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
 
-
-            <!--coundown-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/white"
-                android:layout_marginRight="13sp"
-                android:layout_marginLeft="10sp"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/linear_layout_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/black"
-                    android:gravity="center_horizontal"
-                    android:visibility="gone">
-
-                    <TextView
-                        android:id="@+id/tv_event"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="20dp"
-                        android:text="Android Event Start"
-                        android:textColor="@android:color/white"
-                        android:textSize="20dp"
-                        android:textStyle="normal" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linear_layout_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="visible">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@android:color/black"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tv_days"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="00"
-                            android:textColor="@android:color/white"
-                            android:textSize="50dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_days_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="Days"
-                            android:textColor="@android:color/white"
-                            android:textSize="20dp"
-                            android:textStyle="normal" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginLeft="1sp"
-                        android:background="@android:color/black"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tv_hour"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="00"
-                            android:textColor="@android:color/white"
-                            android:textSize="50dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_hour_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="Hour"
-                            android:textColor="@android:color/white"
-                            android:textSize="20dp"
-                            android:textStyle="normal" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginLeft="1sp"
-                        android:background="@android:color/black"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tv_minute"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="00"
-                            android:textColor="@android:color/white"
-                            android:textSize="50dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_minute_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="Min"
-                            android:textColor="@android:color/white"
-                            android:textSize="20dp"
-                            android:textStyle="normal" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginLeft="1sp"
-                        android:background="@android:color/black"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tv_second"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="00"
-                            android:textColor="@android:color/white"
-                            android:textSize="50dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/tv_second_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="Sec"
-                            android:textColor="@android:color/white"
-                            android:textSize="20dp"
-                            android:textStyle="normal" />
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-            <!---->
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="FIFA WORLD CUP \n 2018-RUSSIA \n To See The Next Match Click Next Button"
-                android:textColor="#dd5044"
-                android:paddingTop="20sp"
-                android:paddingLeft="20sp"
-                android:paddingRight="20sp"
-                android:paddingBottom="20sp"
-                android:textSize="30sp" />
-
-        </LinearLayout>
-
-
+    </android.support.v7.widget.CardView>
 
     <Button
         android:id="@+id/btnNextMatchId"
-        android:layout_width="125sp"
-        android:layout_height="40sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@drawable/next"
+        android:background="#648895"
         android:gravity="center"
-        android:textSize="20sp"
-        android:textColor="#ffffff"
-        android:paddingRight="20sp"
-        android:text="Next"/>
+        android:text="Next Match" />
 
 </LinearLayout>

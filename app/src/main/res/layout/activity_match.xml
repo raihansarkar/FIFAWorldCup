@@ -37,7 +37,6 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                android:background="#5094df"
                 android:src="@drawable/profile"/>
 
 
@@ -45,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="31dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="31dp"
                 android:background="#c8c8c8"/>
 
             <LinearLayout
@@ -55,8 +54,8 @@
                 android:orientation="horizontal"
                 android:paddingLeft="30sp">
                 <ImageView
-                    android:layout_width="40sp"
-                    android:layout_height="20sp"
+                    android:layout_width="25sp"
+                    android:layout_height="25sp"
                     android:layout_weight="1"
                     android:background="@drawable/soccer_30px"/>
                 <TextView
@@ -75,8 +74,8 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="31dp"
+                android:layout_marginBottom="31dp"
                 android:background="#c8c8c8"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -84,8 +83,8 @@
                 android:orientation="horizontal"
                 android:paddingLeft="30sp">
                 <ImageView
-                    android:layout_width="40sp"
-                    android:layout_height="20sp"
+                    android:layout_width="25sp"
+                    android:layout_height="25sp"
                     android:background="@drawable/group_32px"
                     android:layout_weight="1"/>
                 <TextView
@@ -102,8 +101,8 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="31dp"
+                android:layout_marginBottom="31dp"
                 android:background="#c8c8c8"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -111,8 +110,8 @@
                 android:orientation="horizontal"
                 android:paddingLeft="30sp">
                 <ImageView
-                    android:layout_width="40sp"
-                    android:layout_height="20sp"
+                    android:layout_width="25sp"
+                    android:layout_height="25sp"
                     android:layout_weight="1"
                     android:background="@drawable/schedule_32px"/>
                 <TextView
@@ -129,8 +128,8 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="31dp"
+                android:layout_marginBottom="31dp"
                 android:background="#c8c8c8"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -138,19 +137,19 @@
                 android:orientation="horizontal"
                 android:paddingLeft="30sp">
                 <ImageView
-                    android:layout_width="40sp"
-                    android:layout_height="20sp"
+                    android:layout_width="25sp"
+                    android:layout_height="25sp"
                     android:layout_weight="1"
                     android:background="@drawable/news_30px" />
                 <TextView
-                    android:id="@+id/aboutId"
+                    android:id="@+id/newsId"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:textColor="#fff"
                     android:layout_marginLeft="10sp"
-                    android:text="About"/>
+                    android:text="News"/>
             </LinearLayout>
 
 
