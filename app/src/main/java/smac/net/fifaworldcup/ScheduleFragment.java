@@ -4,6 +4,7 @@ package smac.net.fifaworldcup;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,7 +51,7 @@ public class ScheduleFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view= inflater.inflate(R.layout.fragment_match, container, false);
+        view= inflater.inflate(R.layout.fragment_schedule, container, false);
         scheduleListview=(ListView) view.findViewById(R.id.matchListviewId);
 
         db = FirebaseFirestore.getInstance();
@@ -109,8 +110,14 @@ public class ScheduleFragment extends Fragment {
 
     }
 
+    FragmentManager manager;
+    LoadingFragment fragment;
     public void refreshDataView(){
         arrayList.removeAll(arrayList);
+
+        manager=getFragmentManager();
+        fragment=new LoadingFragment();
+        manager.beginTransaction().replace(R.id.matchListId,fragment).commit();
 
         db.collection("matches")
                 .get()
@@ -134,6 +141,8 @@ public class ScheduleFragment extends Fragment {
                                 arrayList.add(item);
 
                             }
+
+                            manager.beginTransaction().remove(fragment).commit();
 
                             adapter.notifyDataSetChanged();
                             Log.d(TAG, "" + arrayList.toString());

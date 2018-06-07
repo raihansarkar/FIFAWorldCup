@@ -126,8 +126,14 @@ public class NextMatchFragment extends Fragment {
 
     }
 
+    FragmentManager manager;
+    LoadingFragment fragment;
     public void refreshDataView(){
         arrayList.removeAll(arrayList);
+
+        manager=getFragmentManager();
+        fragment=new LoadingFragment();
+        manager.beginTransaction().replace(R.id.matchListId,fragment).commit();
 
         db.collection("matches")
                 .get()
@@ -179,6 +185,8 @@ public class NextMatchFragment extends Fragment {
                                     break;
                                 }
                             }
+
+                            manager.beginTransaction().remove(fragment).commit();
 
                             adapter.notifyDataSetChanged();
                             Log.d(TAG, "" + arrayList.toString());

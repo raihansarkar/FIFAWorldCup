@@ -145,8 +145,14 @@ public class GroupFragment extends Fragment {
 //        });
 //    }
 
+    FragmentManager manager;
+    LoadingFragment fragment;
+
     public void refreshDataView(){
         //arrayList.removeAll(arrayList);
+        manager=getFragmentManager();
+        fragment=new LoadingFragment();
+        manager.beginTransaction().replace(R.id.fragment_group,fragment).commit();
 
         db.collection("groups")
                 .get()
@@ -173,6 +179,8 @@ public class GroupFragment extends Fragment {
                                 Item item = new Item(flag1,flag2,flag3,flag4,team1,team2,team3,team4,group);
                                 arrayList.add(item);
                             }
+
+                            manager.beginTransaction().remove(fragment).commit();
 
                             adapter.notifyDataSetChanged();
                             Log.d(TAG, "" + arrayList.toString());
