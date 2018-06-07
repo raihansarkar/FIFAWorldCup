@@ -128,9 +128,14 @@ public class MatchFragment extends Fragment {
 
 
     }
-
+    FragmentManager manager;
+    LoadingFragment fragment;
     public void refreshDataView(){
         arrayList.removeAll(arrayList);
+
+        manager=getFragmentManager();
+        fragment=new LoadingFragment();
+        manager.beginTransaction().replace(R.id.matchListId,fragment).commit();
 
         db.collection("matches")
                 .get()
@@ -156,6 +161,10 @@ public class MatchFragment extends Fragment {
                                     arrayList.add(item);
                                 }
                             }
+
+
+                            manager.beginTransaction().remove(fragment).commit();
+
 
                             if (arrayList.size()<=0){
                                 BlankFragment blankFragment = new BlankFragment();

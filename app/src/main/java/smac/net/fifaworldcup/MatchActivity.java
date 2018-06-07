@@ -1,5 +1,7 @@
 package smac.net.fifaworldcup;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -26,6 +28,8 @@ public class MatchActivity extends AppCompatActivity
     TextView groups;
     TextView schedule;
     TextView about;
+    TextView share;
+    TextView rating;
     FragmentManager fragmentManager;
     NavigationView navigationView;
 
@@ -58,6 +62,8 @@ public class MatchActivity extends AppCompatActivity
         groups=findViewById(R.id.groupsId);
         schedule=findViewById(R.id.scheduleId);
         about =findViewById(R.id.aboutId);
+        share =findViewById(R.id.shareId);
+        rating =findViewById(R.id.ratingId);
 
         fragmentManager=getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.changeLayout,new BlankFragment()).commit();
@@ -103,6 +109,31 @@ public class MatchActivity extends AppCompatActivity
                 fragmentManager=getSupportFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.changeLayout,new AboutFragment()).commit();
                 navigationView.setCheckedItem(R.id.aboutId);
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
+
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT,"FIFA Schedule 2018, This is the initiative of SMAC Technology and from this app, you can see FIFA World Cup 2018 schedule. You will get a periodic reminder of each and every game. You can participate in the quiz, can predict the winner of the game and share it with your friends and family through the social platform  https://play.google.com/store/apps/details?id=smac.net.fifaworldcup");
+                sendIntent.setType("text/plain");
+                Intent.createChooser(sendIntent,"Share via");
+                startActivity(sendIntent);
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
+
+        rating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=smac.net.fifaworldcup"));
+                startActivity(intent);
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
             }
