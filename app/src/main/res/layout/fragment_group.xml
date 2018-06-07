@@ -37,7 +37,7 @@
                 android:background="#1a7dc4"
                 android:paddingLeft="10sp"
                 android:paddingRight="10sp"
-                android:text="DETAILS"
+                android:text="Details"
                 android:textColor="#fff"
                 android:textSize="20sp" />
         </LinearLayout>
