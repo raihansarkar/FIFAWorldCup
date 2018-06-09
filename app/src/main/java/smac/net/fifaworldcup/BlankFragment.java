@@ -17,6 +17,7 @@ import android.widget.TextView;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
+import java.util.TimeZone;
 
 
 /**
@@ -70,8 +71,9 @@ public class BlankFragment extends Fragment {
         tv_second=view.findViewById(R.id.tv_second);
 
 
-        String date = "2018-06-14 21:00:00";
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+        String date = "2018-06-14 18:00:00 GMT+03:00";
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        df.setTimeZone(TimeZone.getTimeZone("GMT+03:00"));
 
 
         try {
