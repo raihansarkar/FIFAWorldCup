@@ -47,7 +47,7 @@
                 android:layout_weight="2"
                 android:gravity="center"
                 android:textColor="#ffffff"
-                android:text="Time" />
+                android:text="Time\n(GMT+6)" />
         </LinearLayout>
 
         <ListView

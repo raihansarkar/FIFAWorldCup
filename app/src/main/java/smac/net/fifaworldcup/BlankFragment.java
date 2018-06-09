@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,7 +90,7 @@ public class BlankFragment extends Fragment {
             public void onTick(long millisUntilFinished) {
 
                 different=millisUntilFinished;
-                // Log.d("rtime",String.valueOf(different));
+                Log.d("rtime",String.valueOf(different));
                 long secondsInMilli = 1000;
                 long minutesInMilli = secondsInMilli * 60;
                 long hoursInMilli = minutesInMilli * 60;
