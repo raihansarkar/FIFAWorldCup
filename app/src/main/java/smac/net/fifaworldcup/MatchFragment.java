@@ -65,7 +65,7 @@ public class MatchFragment extends Fragment {
 
 
         //==================...........Admob ............==================
-        MobileAds.initialize(getActivity().getBaseContext(),"ca-app-pub-3940256099942544~3347511713");
+        MobileAds.initialize(getActivity().getBaseContext(),"ca-app-pub-9351979862618999~6905087848");
 
         mAdView = view.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
