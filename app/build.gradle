@@ -36,5 +36,7 @@ dependencies {
     //firebase=====================
     implementation 'com.google.firebase:firebase-core:11.8.0'
     implementation 'com.google.firebase:firebase-firestore:11.8.0'
+
+    implementation 'com.google.android.gms:play-services-ads:11.8.0'
 }
 apply plugin: 'com.google.gms.google-services'

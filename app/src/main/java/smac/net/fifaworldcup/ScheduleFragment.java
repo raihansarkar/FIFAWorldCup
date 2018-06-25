@@ -15,6 +15,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -41,6 +44,7 @@ public class ScheduleFragment extends Fragment {
     private ListView scheduleListview;
     private BaseAdapter adapter;
     String TAG="firebaseChack";
+    private AdView mAdView;
 
     public ScheduleFragment() {
         // Required empty public constructor
@@ -53,6 +57,15 @@ public class ScheduleFragment extends Fragment {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_schedule, container, false);
         scheduleListview=(ListView) view.findViewById(R.id.matchListviewId);
+
+        //==================...........Admob ............==================
+        MobileAds.initialize(getActivity().getBaseContext(),"ca-app-pub-3940256099942544~3347511713");
+
+        mAdView = view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+        //============================Admob end====================================
+
 
         db = FirebaseFirestore.getInstance();
 
@@ -85,6 +98,7 @@ public class ScheduleFragment extends Fragment {
                 TextView teamTwo=(TextView) convertView.findViewById(R.id.teamTwoId);
                 TextView date=(TextView) convertView.findViewById(R.id.dateId);
                 TextView time=(TextView) convertView.findViewById(R.id.timeId);
+                TextView goal=(TextView) convertView.findViewById(R.id.vsId);
                 ImageView flagOne=(ImageView) convertView.findViewById(R.id.flagOneId);
                 ImageView flagTwo=(ImageView) convertView.findViewById(R.id.flagTwoId);
 
@@ -92,6 +106,7 @@ public class ScheduleFragment extends Fragment {
                 teamTwo.setText(arrayList.get(position).getTeam2());
                 date.setText(arrayList.get(position).getDate());
                 time.setText(arrayList.get(position).getTime());
+                goal.setText(arrayList.get(position).getGoal());
                 Glide.with(getActivity().getBaseContext()).load(arrayList.get(position).getFlag1()).centerCrop().fitCenter().error(R.color.colorAccent).into(flagOne);
                 Glide.with(getActivity().getBaseContext()).load(arrayList.get(position).getFlag2()).centerCrop().fitCenter().error(R.color.colorAccent).into(flagTwo);
                 return convertView;
@@ -134,10 +149,11 @@ public class ScheduleFragment extends Fragment {
                                 String team2 = "" + document.getString("team2");
                                 String date = "" + document.getString("date");
                                 String time = "" + document.getString("time");
+                                String goal = "" + document.getString("goal");
 
 
 
-                                Item item = new Item(flag1,flag2,team1,team2,date,time);
+                                Item item = new Item(flag1,flag2,team1,team2,date,time,goal);
                                 arrayList.add(item);
 
                             }

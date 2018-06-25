@@ -17,6 +17,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -41,6 +44,7 @@ public class GroupFragment extends Fragment {
     private BaseAdapter adapter;
     private TextView groupDetails;
     String TAG="firebaseChack";
+    private AdView mAdView;
 
     public GroupFragment() {
         // Required empty public constructor
@@ -54,6 +58,15 @@ public class GroupFragment extends Fragment {
         view= inflater.inflate(R.layout.fragment_group, container, false);
 
         groupListview=(ListView) view.findViewById(R.id.groupListviewId);
+
+        //==================...........Admob ............==================
+        MobileAds.initialize(getActivity().getBaseContext(),"ca-app-pub-3940256099942544~3347511713");
+
+        mAdView = view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+        //============================Admob end====================================
+
 
         db = FirebaseFirestore.getInstance();
 
