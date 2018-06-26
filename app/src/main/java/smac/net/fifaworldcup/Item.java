@@ -24,6 +24,7 @@ public class Item {
     private String pl4;
     private String gd4;
     private String pst4;
+    private String goal;
 
     public Item() {
     }
@@ -53,13 +54,14 @@ public class Item {
         this.group = group;
     }
 
-    public Item(String flag1, String flag2, String team1, String team2, String date, String time) {
+    public Item(String flag1, String flag2, String team1, String team2, String date, String time, String goal) {
         this.flag1 = flag1;
         this.flag2 = flag2;
         this.team1 = team1;
         this.team2 = team2;
         this.date = date;
         this.time = time;
+        this.goal = goal;
     }
 
     public Item(String team1, String team2, String team3, String team4, String group) {
@@ -281,6 +283,14 @@ public class Item {
         this.pst4 = pst4;
     }
 
+    public String getGoal() {
+        return goal;
+    }
+
+    public void setGoal(String goal) {
+        this.goal = goal;
+    }
+
     @Override
     public String toString() {
         return "Item{" +
@@ -295,6 +305,19 @@ public class Item {
                 ", date='" + date + '\'' +
                 ", time='" + time + '\'' +
                 ", group='" + group + '\'' +
+                ", pl1='" + pl1 + '\'' +
+                ", gd1='" + gd1 + '\'' +
+                ", pst1='" + pst1 + '\'' +
+                ", pl2='" + pl2 + '\'' +
+                ", gd2='" + gd2 + '\'' +
+                ", pst2='" + pst2 + '\'' +
+                ", pl3='" + pl3 + '\'' +
+                ", gd3='" + gd3 + '\'' +
+                ", pst3='" + pst3 + '\'' +
+                ", pl4='" + pl4 + '\'' +
+                ", gd4='" + gd4 + '\'' +
+                ", pst4='" + pst4 + '\'' +
+                ", goal='" + goal + '\'' +
                 '}';
     }
 }
